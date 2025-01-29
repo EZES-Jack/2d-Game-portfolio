@@ -25,19 +25,16 @@ public class scenechange : MonoBehaviour
             SceneManager.LoadSceneAsync("scene1",LoadSceneMode.Single);
             Scoring.totalScore = 0;
             Timer.timer = 0;
-            Debug.Log("11111111111111111");
         }
         if (collision.gameObject.tag == "P_PotionBlue2")
         {
             SceneManager.LoadSceneAsync("scene2", LoadSceneMode.Single);
             Scoring.totalScore -= 1;
-            Debug.Log("2222222222222222");
         }
         if (collision.gameObject.name == "P_PotionBlue3")
         {
             SceneManager.LoadSceneAsync("scene3", LoadSceneMode.Single);
             Scoring.totalScore -= 1;
-            Debug.Log("3333333333333333333");
         }
 
         else if (collision.gameObject.tag == "quit" )
