@@ -23,16 +23,12 @@ public class scenechange : MonoBehaviour
         {
             // Load scene2 asynchronously
             SceneManager.LoadSceneAsync("scene2", LoadSceneMode.Single);
-            // Decrease the total score by 1
-            Scoring.totalScore -= 1;
         }
         // Check if the collided object has the name "P_PotionBlue3"
         if (collision.gameObject.name == "P_PotionBlue3")
         {
             // Load scene3 asynchronously
             SceneManager.LoadSceneAsync("scene3", LoadSceneMode.Single);
-            // Decrease the total score by 1
-            Scoring.totalScore -= 1;
         }
         // Check if the collided object has the tag "quit"
         else if (collision.gameObject.tag == "quit")
@@ -41,8 +37,6 @@ public class scenechange : MonoBehaviour
             Application.Quit();
             // Stop playing in the Unity editor
             UnityEditor.EditorApplication.isPlaying = false;
-            // Log the quit action
-            Debug.Log("quit");
         }
     }
 }
