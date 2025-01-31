@@ -6,39 +6,39 @@ using UnityEngine.UI;
 
 public class Scoring : MonoBehaviour
 {
-    public static int totalScore;                             //defining the score
-    public Text scoreText;                                    //defining the text file
+    public static int totalScore;                         
+    public Text scoreText;                                   
 
     void Start()
     {
-        scoreText.text = "Score: " + Scoring.totalScore;      //initialises the script so the score is displayed as 0
+        scoreText.text = "Score: " + Scoring.totalScore;      
     }
 
    
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "P_PotionBlue2")                  //checks for a collision with the object that ends the level
+        if (collision.tag == "P_PotionBlue2")                  
         {                                                      
-            Scoring.totalScore += 1;                           //adds 1 point to total score
-            scoreText.text = "Score: " + Scoring.totalScore;   //changes the display showing score change
+            Scoring.totalScore += 1;                          
+            scoreText.text = "Score: " + Scoring.totalScore;   
         }
-        else if (collision.tag == "level3")                    //checks for a collision with the object that ends the level
+        else if (collision.tag == "level3")                 
         {
-            Scoring.totalScore += 1;                           //adds 1 point to total score
-            scoreText.text = "Score: " + Scoring.totalScore;   //changes the display showing score change
+            Scoring.totalScore += 1;                          
+            scoreText.text = "Score: " + Scoring.totalScore;   
 
         }
 
-        else if (collision.tag == "end game +3")               //checks for a collision with the object that ends the level
+        else if (collision.tag == "end game +3")             
         {
-            Scoring.totalScore += 3;                           //adds 3 points to total score
-            scoreText.text = "Score: " + Scoring.totalScore;   //changes the display showing score change
+            Scoring.totalScore += 3;                         
+            scoreText.text = "Score: " + Scoring.totalScore;  
 
         }
-        else if (collision.tag == "end game+10")              //checks for a collision with the object that ends the level
+        else if (collision.tag == "end game+10")              
         {
-            Scoring.totalScore += 10;                         //adds 10 points to total score
-            scoreText.text = "Score: " + Scoring.totalScore;  //changes the display showing score change
+            Scoring.totalScore += 10;                         
+            scoreText.text = "Score: " + Scoring.totalScore; 
 
         }
     }
