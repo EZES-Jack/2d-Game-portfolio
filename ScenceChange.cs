@@ -5,43 +5,44 @@ using UnityEngine.SceneManagement;
 
 public class scenechange : MonoBehaviour
 {
-    int scene;
-
-    // Start is called before the first frame update
-    void Start()
-    {
- 
-    }
-     
-    // Update is called once per frame
-    void Update()
-    {
- 
-    }
+    // Method called when the collider enters a trigger collider
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        // Check if the collided object has the tag "P_PotionBlue"
         if (collision.gameObject.tag == "P_PotionBlue")
         {
-            SceneManager.LoadSceneAsync("scene1",LoadSceneMode.Single);
+            // Load scene1 asynchronously
+            SceneManager.LoadSceneAsync("scene1", LoadSceneMode.Single);
+            // Reset the scoring total score
             Scoring.totalScore = 0;
+            // Reset the timer
             Timer.timer = 0;
         }
+        // Check if the collided object has the tag "P_PotionBlue2"
         if (collision.gameObject.tag == "P_PotionBlue2")
         {
+            // Load scene2 asynchronously
             SceneManager.LoadSceneAsync("scene2", LoadSceneMode.Single);
+            // Decrease the total score by 1
             Scoring.totalScore -= 1;
         }
+        // Check if the collided object has the name "P_PotionBlue3"
         if (collision.gameObject.name == "P_PotionBlue3")
         {
+            // Load scene3 asynchronously
             SceneManager.LoadSceneAsync("scene3", LoadSceneMode.Single);
+            // Decrease the total score by 1
             Scoring.totalScore -= 1;
         }
-
-        else if (collision.gameObject.tag == "quit" )
-            {
+        // Check if the collided object has the tag "quit"
+        else if (collision.gameObject.tag == "quit")
+        {
+            // Quit the application
             Application.Quit();
+            // Stop playing in the Unity editor
             UnityEditor.EditorApplication.isPlaying = false;
+            // Log the quit action
             Debug.Log("quit");
-            }
+        }
     }
 }
